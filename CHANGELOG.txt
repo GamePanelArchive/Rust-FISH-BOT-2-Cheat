@@ -1,0 +1,238 @@
+Version 1.0:
+	- Initial release.
+	
+Version 1.1:
+	- Added '+' (Add) function
+	- Added '-' (Subtraction) function
+	- Added '/' (Divide) function
+	- Added '%' (Modulus) function
+	- Added '*' (Multiplication) function
+	- Added '^' (Pow) function
+	- Added 'Abs' function
+	- Added 'Ceil' function
+	- Added 'Floor' function
+	- Added 'Round' function
+	- Fixed 'cast not supported' in some expressions
+	- Fixed 'Parameter type mismatch' in some expressions
+	- Fixed error while trying to copy lists data
+	- Fixed Debug Form operation timed out issue after debugging stage/config on Execute single line function
+	
+Version 1.2:
+	- Fixed config list not listing encrypted configs
+	
+Version 1.3:
+	- Added 'RegexReplace' function
+	- Added 'RegexOptions' and 'Timeout' Optional Parameters to 'Aim' function
+	- Added 'RegexOptions' and 'Timeout' Optional Parameters to 'Aim' function
+	- Fixed expression parser issue with parsing expression wrong (Rare)
+	- Fixed always Following redirects
+	- Fixed proxy settings and Auto Update Proxies issue (not being set)
+	- Fixed Form errors on changing settings while no configs selected
+	- Fixed setting list position works after several clicks/tries
+	- Fixed Delete worker button
+	
+Version 1.4:
+	- Added 'Online Stormers'! see how many users are running STORM!
+	- Added 'Escape new lines' option in Debug Form > Tab 2 > Escaper
+	- Added 'Unescape new lines' option in Debug Form > Tab 2 > Unescaper
+	- Performance improvements!
+	- Fixed FTP Bad Sequence of Commands issue
+	- Fixed Unable to start checker again while stopping checker by 'Delete worker' button
+	- Fixed 'Condition' config key "Any" value case sensitivity
+	- Fixed 'START' button cannot start a new checker when Stopping/Pausing a checker!
+	- Fixed 'Replace' function issue
+	- Increase time out of Single Function Executer in Debug Form to 5 second
+	
+Version 1.5:
+	- Added 'Generate' Function! Now You can Generate Random UUIDs And Random Device IDs!
+	- Added 'Count' Function! Count String/Text/Word Occurrences!
+	
+Version 2.0:
+	- New Design/Form made from Scratch! Google's Material Design!
+	- Fully Responsive and Resizable Debug Form!
+	- HUGE Performance improvements.
+	- New Encryption key for Config Encryption, Note that you can still load old encrypted configs!
+	- Fixed Memory Leak.
+	- Added Database File to View Unknown List Debug Logs to prevent High Memory usage and possible crash on huge Unknown items.
+	- Added Optimized and Smart CloudFlare 5 Seconds Challenge page Solver! Add "CFPassDelay = 5000" to the Stages that need to pass the CloudFlare (Recommended to use it in all Stages if the Host has CloudFlare Enabled)! "MaxCFRetries = xx" General config key to limit retries, Return banned when limit reached.
+	- Added Debug Threads option, Add "Debug = True" in "General" section of Config, Remove it before Releasing Configs as it really increase Memory Usage.
+	- Added Syntax Highlighting for Debugs, Including HTML and STORM Codes.
+	- Hits/Free Items will get Saved Immediately now.
+	- Amount of threads can now be decreased without STORM pausing.
+	- The HTTP Header field orders will be kept and will send as you provided in config, Also Set "*" for "Content-Length" header value to have it's real value wherever you want.
+	- Handle "IndexOf" function possible Exceptions, returns "-1" on Exceptions/Errors!
+	- Handle "Substring" function possible Exceptions, returns the Input string/text without any changes on Exceptions/Errors! the worker will not get stopped anymore.
+	- "!=" (Not Equal) function now can also compare strings/texts
+	- "UnixTimeToDate" on Empty or wrong Unixtime format will return nothing (No more Errors/Exceptions)
+
+Version 2.0.1:
+	- Standalone Executable file.
+	- Added Advance Debug Logs Regarding the Functions and their Errors
+	- Fixed "Parsing" error message in Thread infos.
+	- Fixed Config Executor Debug Log shows The Proxy as Proxy Type.
+	- Fixed Debug Form's Crash Error (due to the Syntax Highlighting, Just disabled it!)
+	- Fixed Debug Form's Custom Response Setter In Page 2
+	- Changed the Protector and Protection Method that Caused some issues.
+	
+Version 2.0.2:
+	- Target framework changed to .NET Framework 4.7.2
+	- Added Text Find/Search for Debug Form.
+	- New Config Encryption key, v2.0.2 Encrypted Configs cannot be loaded on lower versions.
+	- Fixed Load Combo List Error due to low-length Combo file path (<= 70)
+	- Thread's Debug Logs Full Screen Availability
+	
+Version 2.1:
+	- Added FAST Javascript Executor Function, 'JSExecute'. NOTE: Be aware of High CPU usage which Depends on your Javascript Code too, High amount of Threads can cause a Crash.
+	- Proxyless Configs will wait for 'UnbanAllProxiesWhenAllBannedAfter' minutes on a Ban Condition.
+	
+Version 2.1.1:
+	- Fixed Start button not working issue related to Windows language, Thanks to @Centuri
+	- Fixed Online Stormers, You was getting flagged as Offline after few minutes which resulted lower "Online Stormers" Since STORM 2.0!
+	- Fixed the Design of Debug Form > Page 2
+	- Better Thread Status if the Config threw an Unhandled Exception!
+	
+Version 2.2:
+	- Added Brotli Decompression! You can now use "br" in your "Accept-Encoding" Header
+	- Added 'CustomSaveFormat' General Section Config Key, No more "========" in Save Format if you set it to True.
+	- Switched the Target CPU to x86
+	- Uses the most best and powerful Syntax Editor instead of AvalonEdit (The Syntax Highlighting is not yet implemented).
+	- Listboxes on "Stats And Lists" Page (Hits, Free and Unknown) will not keep items more than 1000, Oldest item will be removed from the list if the checker got a new item (To Prevent Memory Leak).
+	- Fixed Memory Leak and Crashes due to OutOfMemoryException.
+	- Changed the DB Engine To SQLite because of OutOfMemoryExceptions of LiteDB, That was unable to handle files larger than 1.5 GB aswell.
+	
+Version 2.2.1:
+	- Fixed issue with Encrypted Configs and the Configs WITHOUT Debug Enabled!
+	- Fixed a bug that was causing "Failed to connect! bad proxy/connection/host." in some special hosts (Since STORM 2.0)
+	- Switched back the DB Engine to LiteDB, A new way of implementation, By the tests i made, it works 20X better than SQLite in multi read/writes.
+	
+Version 2.2.1.1:
+	- Fixed issue with Encrypted Configs and the Configs WITHOUT Debug Enabled!
+	
+Version 2.3:
+	- The Variable System now Supports different Type of values and not only string anymore, it makes me able to make more flexible and better functions!
+	- Added "Loop-Condition"! Let's Loop through the Stage till you like! Get the Loop Counter by $CurLoop# Variable!
+	- Added a Catched Exception message to the next line of "Failed to connect! bad proxy/connection/host." message, more detailed info.
+	- Added RegexEx, RegexExAdd, RegexExPropertiesSetter and RegexExPrint Functions!
+	- Added JsonSerialize, CharCodeAt Functions!
+	- Added Stats of the Donation Goal and "Donate Now" Button to the About tab, But Clicking to the Donation Goal message also will do the same ;)
+	- Fixed a very rare Stack Empty Config Error due to the Variables which Starts with the same chars as the available Operators (Like $Order variable)
+	- Performance Improvements.
+
+Version 2.3.1:
+	- Fix the "Unhandled Config Exception... Index Out of Range" Error for most of configs (or all)
+	- Fix the wrong "Variable has been used but never Declared!" while using RegexExAdd. (just forget to update the log after all the changes i made for the Loop-Condition)
+	
+Version 2.3.1.1:
+	- Updated the official domain to the new one (TheStorm.App)
+	- Fixed the worker list position cannot go higher than 4,000,000 and stops at 4 Million list position.
+
+Version 2.4:
+	- The most light-weight and fast Connection library in the house, coded from Scratch for STORM!
+	- New connection library includes the fix of failing on requesting to some hosts/link and the issue with some Socks5 in some rare links.
+	- Supports Your own Order for Cookie and Content-Length in headers, Put an Asterisk char (*) after Cookie or Content-Length to put the value in the same place as you specified, e.g: Content-Length: *
+	- Performance Improvements.
+	- Memory Optimizations.
+	- Platform target changed to Any CPU, 64-bit Operating Systems, x64-based processors can now use more and more memory (RAM) and hopefully, no more OutOfMemoryExceptions!!
+	- Added Automatic memory optimization/cleanup.
+	- Added a simple Messagebox to ask if You're sure that you want to close STORM!
+	- Added "Sleep", "Reverse" function!
+	- Fixed the Failed to Connect error message for some hosts on Windows 7!
+	- Fixed the Rare Crash while Scrolling Down the "Stats & Lists" page Lists!
+	- Fixed FollowRedirect cannot redirect on some type of redirect urls!
+	- Fix The Crash error due to having Multiple lines with the same File:\\ name in the Config while loading it!
+	- Removed the "MatchEx found" Messagebox!
+	- TODO: FTP Client is not yet implemented on the new Connection library, so you cannot use FTP feature yet.
+
+Version 2.4.1:
+	- Added a MessageBox Error that Notice you if the Config that you're loading has errors (Like Duplicate Variables/Stages!)!
+	- Added "HTMLEncode", "HTMLDecode" Functions
+	- Made Some changes to the Proxy Usage
+	- Fixed The issue with having Content-Length/Cookie in Headers to Send Variable (Double Content-Length/Cookie headers was being sent)
+	- Fixed The issue with Custom Port URLs!
+	- Fixed The issue with Cookies in Redirects
+	- Fixed The issue with "Copy All Data" / "Save All Data" buttons in Lists! (Was Copying/Saving the Shortened Capture)
+	
+Version 2.4.1.1:
+	- Fixed Dispose of Connection Client was causing Login issues on some sites/scripts (Since 2.4.1)
+	
+Version 2.4.1.2:
+	- Fixed the Connection Library Failed to Connect issue on some special SSL sites since v2.4.1.1!
+	- Fixed The Host header in Follow Redirects if you had the Host in headers variable (Will detect the new host of the redirect address).
+	- Fixed Content-Type in headers was being sent in Follow Redirects in case of that you had set Content-Type in headers variable.
+	
+Version 2.5:
+	- Added FTP Support once again, But this time more light-weight and optimized!
+	- Added 'Tested Per Minute', 'Total Threads' and 'Total Loaded Combo' Stats.
+	- Added "HMACSHA1", "HMACSHA384", "HMACSHA512", "HMACMD5" and "HMACRIPEMD160" support for PBKDF2 Hashing. (The Function name also has been changed from "pbkdf2hmacsha256" to "pbkdf2hmac")
+	- Added 'GetBytes', 'GetString', 'AES', 'RSAParameters' and 'RSA' Functions.
+	- Added 'Base64' option for 'SHA' and 'HMAC' Hashing methods.
+	- 'Base64Encode' And 'Base64Decode' Functions now Supports Byte Arrays Inputs!
+	- Fixed a very rare "It's time to wait for data from the HTTP server" message on some special pages!
+	- Fixed the Proxy Authorization was being ignored.
+	- Fixed an OLD Bug behind the FTP Stages!
+	- Fixed the worker list position cannot go higher than 4,000,000 and stops at 4 Million list position.
+	- Fixed a very rare Redirect Location issue (Like the Origin's SelfLocation header Redirect Infinite Loop)!
+	- Fixed the Debug Window keeps sending requests in redirect loops even while you have the window closed!
+	- Fixed the "Cookie: *" functionality.
+	- Removed the Junk MessageBox on "Delete" button in Debug Form.
+	
+Version 2.5.1:
+	- Added "HEX" and "Bytes" Support for "RSA" and "AES" functions output type.
+	- Fixed Double "Cookie: " was being sent while you had the cookies in Headers Variable.
+	- Fixed the "URLEncode"/"URLDecode" function not encoding/decoding some special chars.
+	
+Version 2.5.1.1:
+	- Added Exception Handling Globally, Log files created but no more crashes! ( Read more: https://docs.microsoft.com/en-us/dotnet/api/system.windows.application.dispatcherunhandledexception?redirectedfrom=MSDN&view=netframework-4.7.2 )
+	
+Version 2.6.0.2:
+	- Performance/MVVM Improvements.
+	- Added Donors List in a new page to appreciate them.
+	- Added Support for Solving Different type of Captchas by Different Captcha Solving Services/Tools, Make your Own Captcha Solver Config and Solve Captchas By just Using 'Captcha' Function in the main config.
+	- Added Support for Loading an Account List for the Captcha Solver Config, Load Bulk of Accounts to not get stopped for a low-balance account.
+	- Added Support for Putting an Asterisk (*) instead of Numbers in Variable- Config keys. NOTE: The line orders of Variables matters as it don't read variables by the ordered numbers. Numbered Variables are still supported.
+	- Added Support for putting Byte Array (byte[]) In PostContent.
+	- Added 'Type' key for Stages and supports 'Socket' and 'HttpImageOnly' types, Stages with 'Socket' Type will not Send Any Requests automatically by itself and Stages with 'HttpImageOnly' and the 'StageXXResponseImage' Variable is used to Recieve an Image and get it's bytes within an HTTP/s Request.
+	- Added 'For' and 'While' Keywords, The same as C#, Loop through Variables and Functions/Codes as much as you want.
+	- Added 'Advanced View' for Debug Logs, Makes you able to Use Syntax Highlight / Find Text / HTML Viewer.
+	- Added 'Stop' feature to be able to Stop Running Debug Config/Stage.
+	- Added 'Captcha' Function.
+	- Added 'GenerateOAuth' Function, Generate OAuth Header Lines and Signatures.
+	- Added 'Shuffle' and 'Random' Functions, Generate PURE Random Numbers/Strings/User-Agents/Device-Models/Bytes and Headers and Shuffle the lines.
+	- Added 'Invoke' Function, Invoke different methods of different types directly.
+	- Added 'GetPropertyValue' Function, Gets a specific property value of the Input Variable Type.
+	- Added 'Convert' Function, Returns an object of a specified type whose value is equivalent to a specified object.
+	- Added 'SocketClient', 'SocketClientWrite', 'SocketClientRead', 'SocketClientReadToEnd', 'SocketClientReadToDelimiter', 'SocketClientReadToCount', 'SocketClientPrintData', 'SocketClientClearData' and 'SocketClientDisconnect' Functions, Make your own Socket Requests Directly and Totally Customized/Managed.
+	- Added 'Bytes' and 'ArrayCopy' Functions, Create Byte Arrays and manage them.
+	- Added 'GenerateAESKey' Function, Generate RFC2898 AES Keys.
+	- Added 'CallIf' Function, Call/Execute Another function and return the value if the Provided Condition matched.
+	- Added 'StringFormat' and 'ToString' Functions, Google "C# String.Format" and "C# ToString" for more info.
+	- Added 'GetDateTime' Function, Returns the Current Date/Time or Provided Timestamp's Date/Time.
+	- Added Support for Getting Provided Date/Time UnixTime to the 'UnixTime' Function.
+	- Added 'RemoveDuplicates' Function, Remove Duplicate Words/Specific Words or Lines of the Provided String.
+	- Added 'List' and 'ListAdd' Functions, Represents C# System.Collections.Generic.List<Object> object.
+	- Added 'Dictionary' and 'DictionaryAdd' Functions, Represents C# System.Collections.Generic<Object, Object> object.
+	- Added 'HashTable' and 'HashTableAdd' Functions, Represents C# System.Collections.Hashtable object.
+	- Added 'KeyValuePair' Function, Represents C# KeyValuePair object, Can be used to Add Items to Dictionaries and HashTables and more.
+	- Added 'MultiPartFormDataContent' and 'FileParameter' Functions, Generate MultiPartFormData, Also supports File Parameter. Returns a Byte Array (byte[])
+	- Added 'GetItemAt' and 'SetItemAt' Functions, Get and Set Items to Lists/HashTables/Arrays and Dictionaries  at Specific index/key.
+	- Added 'SimpleJsonWriter' Function, Returns Json Text by providing HashTable.
+	- Added 'FromCharCode' Function, Converts Unicode values into characters.
+	- Added 'JavascriptStringEncode' and 'JavaScriptStringDecode' Functions.
+	- Added 'Contains', 'NotContains', 'EqualEx' and 'NotEqualEx' Functions, Compare Several Strings to the Source with one function.
+	- Added Support For HmacSHA224 Hash Generation.
+	- Added Support for Bytes input types for the "PBKDF2-HMAC" function.
+	- Added Support for Bytes Input types for the "HMAC" Function.
+	- Added Support for Hex output of "GetString" Function.
+	- Added Support for Specifying The Encoding in 'URLEncode'/'URLDecode' Functions.
+	- Added 'Play Sound On Hits' Feature, You can also change the sound to what you want. (Separated for each worker).
+	- Added and Used New Powerful List Controls that makes you to also Filter Items in like a boss by Microsoft Excel's ways.
+	- Added 'DeepSkip' General Config Option, 'DeepSkip = True' will Also Skip the Variable Execution and The Conditions of The Skipped Stages, Default is False.
+	- Used a new Encryption key for Encrypted Configs (Old Encrypted Configs are still usable)
+	- Fixed FTP Configs cannot be run with 2 or more threads.
+	- Fixed "Delete Worker" button was not disposing/releasing some resources.
+	- Fixed The Start button is not doing anything because of the invalid chars in "HitsFolderName" (Removes invalid chars from "HitsFolderName").
+	- Fixed Configs was not being loaded if you opened STORM via Start menu.
+	- Fixed 'Copy All' and 'Save All' Buttons now Get the Items from Database to not be limited to the Max. List items (1000).
+	- Fixed Delete Worker button now Disposes Objects.
+	- Fixed GetBytes / GetString minor issue with the Destination/Source Encoding.
+	- Removed 'JsonSerialize' Function.
